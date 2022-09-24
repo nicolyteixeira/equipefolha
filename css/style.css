@@ -1,0 +1,409 @@
+/* fonte */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* corpo do codigo */
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #f2f2f2;
+  position: relative;
+}
+
+/* div wrapper para centralizar e agrupar o conteúdo inteiro do site */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*alinhamento vertical */
+  justify-content: space-evenly; /*alinhamento horizontal */
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  overflow: hidden;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 5px;
+}
+
+/* textos */
+.titulo {
+  color: #ff8000;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+  margin-top: 20px;
+  text-align: center;
+  grid-template-columns: 1fr;
+  padding-top: 10px;
+}
+
+p {
+  font-family: "Quicksand", sans-serif;
+  text-align: left;
+  color: #000080;
+  font-size: 20px;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.bars {
+  width: 40%;
+  border: 2px solid #ff8000;
+  margin-top: 10px;
+}
+
+/* editando o card */
+
+.container .main-card {
+  display: flex;
+  justify-content: space-evenly;
+  /* distribui o espaço entre os itens uniformemente. É semelhante ao space-around, mas fornece espaço igual em vez de metade do tamanho nas bordas*/
+  width: 10%;
+  transition: 1s;
+  padding: 1px;
+  margin-left: 0;
+}
+
+.container .main-card .cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* colocar pelo numero de elementos */
+  flex-wrap: wrap;
+  margin: 0 20px;
+  justify-content: space-between;
+}
+
+.main-card .cards .card {
+  width: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+
+.main-card .cards .card:hover {
+  transform: translateY(-15px);
+}
+
+.cards .card .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* imagem card */
+.cards .card .content .img {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #000080;
+  margin-bottom: 14px;
+}
+
+.card .content .img img {
+  height: 125px;
+  width: 125px;
+  border: 3px solid #ffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* nome card */
+.card .content .name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000080;
+}
+
+/* posicao card */
+.card .content .job {
+  font-size: 18px;
+  color: #000000;
+}
+
+/* icones das redes */
+.card .content .media-icons {
+  margin-top: 10px;
+  display: flex;
+  padding: 1px;
+}
+
+.media-icons a {
+  text-align: center;
+  line-height: 33px;
+  height: 35px;
+  width: 35px;
+  margin: 0 4px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: #000080;
+}
+
+/* rodape */
+
+.footer {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.footertext {
+  color: #000080;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* responsivo cards*/
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* telas grandes e desktop */
+  .container .main-card {
+    width: 50%;
+    margin-left: 0;
+  }
+
+  .container .main-card .cards {
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .main-card .cards .card {
+    margin-right: 15px;
+    margin-bottom: 20px;
+  }
+
+  .titulo {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .bars {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 935px) and (max-width: 1024px) {
+  /* telas pequenas e laptops */
+  .container .main-card {
+    width: 50%;
+    margin-left: 0;
+  }
+
+  .container .main-card .cards {
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .main-card .cards .card {
+    margin-right: 15px;
+    margin-bottom: 20px;
+  }
+
+  .titulo {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .bars {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 934px) {
+  /* telas pequenas e laptops */
+  .container .main-card {
+    width: 80%;
+    margin-left: 90px;
+  }
+
+  .container .main-card .cards {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main-card .cards .card {
+    margin-right: 15px;
+    margin-bottom: 20px;
+  }
+
+  .titulo {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .bars {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 768px) {
+  /* ipad e tablet */
+  .container .main-card {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .container .main-card .cards {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main-card .cards .card {
+    margin-right: 15px;
+    margin-bottom: 20px;
+  }
+
+  .titulo {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .bars {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 549px) {
+  /* ipad e tablet */
+  .container .main-card {
+    width: 50%;
+    margin-left: 15%;
+  }
+
+  .container .main-card .cards {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main-card .cards .card {
+    margin-bottom: 15px;
+  }
+
+  .titulo {
+    font-size: 25px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .bars {
+    width: 60%;
+  }
+
+  .card .content .name {
+    font-size: 15px;
+  }
+
+  .card .content .job {
+    font-size: 15px;
+  }
+
+  .media-icons a {
+    line-height: 23px;
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  /* dispositivos moveis */
+  .container .main-card {
+    width: 70%;
+    margin-left: 20%;
+  }
+
+  .container .main-card .cards {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .main-card .cards .card {
+    margin-bottom: 15px;
+  }
+
+  .titulo {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 15px;
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  .bars {
+    width: 60%;
+  }
+
+  .card .content .name {
+    font-size: 15px;
+  }
+
+  .card .content .job {
+    font-size: 15px;
+  }
+
+  .media-icons a {
+    line-height: 23px;
+    height: 25px;
+    width: 25px;
+  }
+}
