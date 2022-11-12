@@ -15,8 +15,21 @@ html {
 body {
   min-height: 100vh;
   min-width: 100vw;
-  background: #f2f2f2;
+  background: #ffffff;
   position: relative;
+}
+
+body::before {
+  content: '';
+  /* content é usada com os pseudoelementos ::before e ::after para gerar conteúdo em um elemento. Objetos inseridos usando a propriedade content são elementos substituídos anônimos. */
+  position: absolute;
+  /* é posicionado em relação ao elemento posicionado mais próximo (em vez de posicionado em relação à viewport, como fixo). */
+  width: 100%;
+  background: #000080;
+  clip-path: inset(24% 0 0 0);
+  z-index: -1;
+  /* serve pra posicionar o conteudo na frente ou atras de outro conteudo */
+  height: 100%;
 }
 
 /* div wrapper para centralizar e agrupar o conteúdo inteiro do site */
@@ -170,240 +183,14 @@ p {
 /* rodape */
 
 .footer {
-  background-color: #ffffff;
+  background-color: #000080;
   width: 100%;
 }
 
 .footertext {
-  color: #000080;
+  color: #ffffff;
   font-family: "Quicksand", sans-serif;
   font-size: 20px;
   text-align: center;
   margin-top: 30px;
-}
-
-/* responsivo cards*/
-
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  /* telas grandes e desktop */
-  .container .main-card {
-    width: 50%;
-    margin-left: 0;
-  }
-
-  .container .main-card .cards {
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  .main-card .cards .card {
-    margin-right: 15px;
-    margin-bottom: 20px;
-  }
-
-  .titulo {
-    font-size: 40px;
-    margin-top: 20px;
-  }
-
-  p {
-    font-size: 20px;
-    margin-top: 20px;
-    width: 90%;
-  }
-
-  .bars {
-    width: 50%;
-  }
-}
-
-@media only screen and (min-width: 935px) and (max-width: 1024px) {
-  /* telas pequenas e laptops */
-  .container .main-card {
-    width: 50%;
-    margin-left: 0;
-  }
-
-  .container .main-card .cards {
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  .main-card .cards .card {
-    margin-right: 15px;
-    margin-bottom: 20px;
-  }
-
-  .titulo {
-    font-size: 40px;
-    margin-top: 20px;
-  }
-
-  p {
-    font-size: 20px;
-    margin-top: 20px;
-    width: 90%;
-  }
-
-  .bars {
-    width: 60%;
-  }
-}
-
-@media only screen and (min-width: 769px) and (max-width: 934px) {
-  /* telas pequenas e laptops */
-  .container .main-card {
-    width: 80%;
-    margin-left: 90px;
-  }
-
-  .container .main-card .cards {
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .main-card .cards .card {
-    margin-right: 15px;
-    margin-bottom: 20px;
-  }
-
-  .titulo {
-    font-size: 40px;
-    margin-top: 20px;
-  }
-
-  p {
-    font-size: 20px;
-    margin-top: 20px;
-    width: 90%;
-  }
-
-  .bars {
-    width: 60%;
-  }
-}
-
-@media only screen and (min-width: 550px) and (max-width: 768px) {
-  /* ipad e tablet */
-  .container .main-card {
-    width: 70%;
-    margin-left: 15%;
-  }
-
-  .container .main-card .cards {
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .main-card .cards .card {
-    margin-right: 15px;
-    margin-bottom: 20px;
-  }
-
-  .titulo {
-    font-size: 30px;
-    margin-top: 20px;
-  }
-
-  p {
-    font-size: 20px;
-    margin-top: 20px;
-    width: 90%;
-  }
-
-  .bars {
-    width: 70%;
-  }
-}
-
-@media only screen and (min-width: 480px) and (max-width: 549px) {
-  /* ipad e tablet */
-  .container .main-card {
-    width: 50%;
-    margin-left: 15%;
-  }
-
-  .container .main-card .cards {
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .main-card .cards .card {
-    margin-bottom: 15px;
-  }
-
-  .titulo {
-    font-size: 25px;
-    margin-top: 20px;
-  }
-
-  p {
-    font-size: 18px;
-    margin-top: 20px;
-    width: 90%;
-  }
-
-  .bars {
-    width: 60%;
-  }
-
-  .card .content .name {
-    font-size: 15px;
-  }
-
-  .card .content .job {
-    font-size: 15px;
-  }
-
-  .media-icons a {
-    line-height: 23px;
-    height: 25px;
-    width: 25px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 479px) {
-  /* dispositivos moveis */
-  .container .main-card {
-    width: 70%;
-    margin-left: 20%;
-  }
-
-  .container .main-card .cards {
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
-
-  .main-card .cards .card {
-    margin-bottom: 15px;
-  }
-
-  .titulo {
-    font-size: 20px;
-    margin-top: 20px;
-  }
-
-  p {
-    font-size: 15px;
-    margin-top: 20px;
-    width: 90%;
-  }
-
-  .bars {
-    width: 60%;
-  }
-
-  .card .content .name {
-    font-size: 15px;
-  }
-
-  .card .content .job {
-    font-size: 15px;
-  }
-
-  .media-icons a {
-    line-height: 23px;
-    height: 25px;
-    width: 25px;
-  }
 }
